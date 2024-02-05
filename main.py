@@ -21,10 +21,25 @@ if __name__ == "__main__":
 
     if n == 0:
         while True:
-            driver.get(profile_path)
-            time.sleep(refresh_lag)
+            try:
+                driver.get(profile_path)
+                time.sleep(refresh_lag)
+            except Exception as e:
+                if type(e) != KeyboardInterrupt:
+                    driver = undetected_chromedriver.Chrome(driver_executable_path="chromedriver.exe", options=options, use_subprocess=True)
+                    driver.get(profile_path)
+                    time.sleep(refresh_lag)
+                else:
+                    break
     else:
         while counted <= n:
-            driver.get(profile_path)
-            time.sleep(refresh_lag)
-
+            try:
+                driver.get(profile_path)
+                time.sleep(refresh_lag)
+            except Exception as e:
+                if type(e) != KeyboardInterrupt:
+                    driver = undetected_chromedriver.Chrome(driver_executable_path="chromedriver.exe", options=options, use_subprocess=True)
+                    driver.get(profile_path)
+                    time.sleep(refresh_lag)
+                else:
+                    break
