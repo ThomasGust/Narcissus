@@ -17,7 +17,7 @@ refresh_lag = int(sys.argv[2])
 profile_path = f"https://github.com/{username}/{username}"
 n = int(sys.argv[3])
 
-driver = undetected_chromedriver.Chrome(driver_executable_path="chromedriver.exe", options=options)
+driver = undetected_chromedriver.Chrome(driver_executable_path="chromedriver.exe", options=options, subprocess=True)
 driver.get(profile_path)
 
 counted = 0
