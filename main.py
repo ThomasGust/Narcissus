@@ -6,14 +6,14 @@ import sys
 
 
 if __name__ == "__main__":
-    options = uc.ChromeOptions()
+    options = undetected_chromedriver.ChromeOptions()
     if sys.argv[4] == 1:
         options.add_argument("--headless")
 
     username = sys.argv[1]
-    refresh_lag = sys.argv[2]
+    refresh_lag = int(sys.argv[2])
     profile_path = f"https://github.com/{username}/{username}"
-    n = sys.argv[3]
+    n = int(sys.argv[3])
 
     driver = undetected_chromedriver.Chrome(driver_executable_path="chromedriver.exe", options=options, use_subprocess=True)
 
@@ -43,3 +43,4 @@ if __name__ == "__main__":
                     time.sleep(refresh_lag)
                 else:
                     break
+            counted += 1
