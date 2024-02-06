@@ -1,6 +1,6 @@
 # GitHub Profile View Increaser
 
-This is a Python script that uses multithreading to automate the process of increasing the view count of a GitHub profile. It uses the `undetected_chromedriver` package to automate a Chrome browser, which visits the specified GitHub profile repeatedly.
+This is a Python script that uses multithreading to automate the process of increasing the view count of a GitHub profile. It uses '`selenium` and the `undetected_chromedriver` package to automate a Chrome browser, which visits the specified GitHub profile repeatedly.
 
 ## How it Works
 
