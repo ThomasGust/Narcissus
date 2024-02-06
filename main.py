@@ -1,11 +1,38 @@
 import os
 import threading
-print("HELLO")
+import argparse
+import sys
 
-def start_thread():
-    os.system("python driver.py ThomasGust 1 0 0")
 
-threads = []
-for i in range(3):
-    threads.append(threading.Thread(target=start_thread))
-    threads[i].start()
+if __name__ == "__main__":
+
+    argumentList = sys.argv[1:]
+
+    options = "hmo:"
+    long_options = ["Help", "My_file", "Output="]
+
+    parser = argparse.ArgumentParser()
+ 
+    
+    parser.add_argument("-u", "--Username", help = "GitHub Profile Username")
+    parser.add_argument("-t", "--Threads", help="Number of windows or threads to be used")
+    parser.add_argument("-w", "--Wait-Time", help="Average length of delay in between page reloads")
+    parser.add_argument("-v", "--Views", help="The number of views to be added, 0 means run until interrupted")
+    
+
+    args = parser.parse_args()
+    username = args.Username
+    threads = args.Threads
+    wt = args.Wait_Time
+    views = args.Views
+
+    
+    def start_thread():
+        os.system(f"python driver.py {username} {wt} {views} 0")
+
+    t= []
+    
+    for i in range(threads):
+        t.append(threading.Thread(target=start_thread))
+        t[i].start()
+
