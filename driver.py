@@ -7,10 +7,16 @@ import sys
 """
 This is a simple toy script to give a GitHub profile more views. Command line usage will be described in the README for this repository.
 """
+
 print("STARTED")
 options = undetected_chromedriver.ChromeOptions()
-if sys.argv[4] == 1:
-    options.add_argument("--headless")
+
+# RIGHT NOW, HEADLESS DOES NOT ACTUALLY REGISTER NEW VIEWS
+if int(sys.argv[4]) == 1:
+    print("ATTEMPTING TO HIDE")
+    #options.add_argument("--headless")
+    options.add_argument("--no-startup-window")
+    options.add_argument('-no-sandbox')
 
 username = sys.argv[1]
 refresh_lag = int(sys.argv[2])
