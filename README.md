@@ -37,4 +37,4 @@ The script (`main.py`) accepts the following command line arguments:
 Here is an example of how to use the script:
 
 ```bash
-python driver.py myusername 5 100
+python narcissus.py myusername 5 100
