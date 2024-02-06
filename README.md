@@ -1,45 +1,33 @@
-# Narcissus
+# GitHub Profile View Increaser
 
-This is a Python script that uses multithreading to automate the process of increasing the view count of a GitHub profile.
+This is a Python script that uses multithreading to automate the process of increasing the view count of a GitHub profile. It uses the `undetected_chromedriver` package to automate a Chrome browser, which visits the specified GitHub profile repeatedly.
+
+## How it Works
+
+The script takes in three command line arguments: the GitHub username, the refresh lag (time between page reloads), and the number of views to be added. 
+
+It then constructs the URL for the GitHub profile and starts a Chrome browser using `undetected_chromedriver`. The browser is set to not display a startup window and to not use a sandbox for security reasons.
+
+The script then enters a loop where it reloads the GitHub profile page and then waits for a random amount of time before reloading again. The random wait time is either slightly more or slightly less than the specified refresh lag, to make the page visits appear more natural.
+
+If the number of views to be added is set to 0, the script will continue to reload the page until it is manually interrupted.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 - Python 3.x
-- argparse library
+- `undetected_chromedriver` package
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development environment running
-
 1. Clone the repository
-2. Install the prerequisites
-3. Run the script with the necessary command line arguments
+2. Install Python 3.x if you haven't already
+3. Install the `undetected_chromedriver` package using pip: `pip install undetected-chromedriver`
 
 ## Usage
 
-The script accepts the following command line arguments:
+Here is an example of how to use the script:
 
-- `-u` or `--Username`: GitHub Profile Username
-- `-t` or `--Threads`: Number of windows or threads to be used
-- `-w` or `--Wait-Time`: Average length of delay in between page reloads
-- `-v` or `--Views`: The number of views to be added, 0 means run until interrupted
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+```bash
+python driver.py myusername 5 100
