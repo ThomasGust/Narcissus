@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     
     def start_thread():
-        os.system(f"python driver.py {username} {wt} {int(int(views)/int(threads))} 0")
+        os.system(f"python viewer.py {username} {wt} {int(int(views)/int(threads))} 0")
 
     t= []
 
