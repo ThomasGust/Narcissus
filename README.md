@@ -1,4 +1,4 @@
-# GitHub Profile View Increaser
+# Narcissus
 
 This is a Python script that uses multithreading to automate the process of increasing the view count of a GitHub profile. It uses '`selenium` and the `undetected_chromedriver` package to automate a Chrome browser, which visits the specified GitHub profile repeatedly.
 
@@ -26,7 +26,7 @@ There isn't much special you need to do to use this code
 - `selenium`
 
 ## Usage
-The script (`main.py`)accepts the following command line arguments:
+The script (`main.py`) accepts the following command line arguments:
 
 - `-u` or `--Username`: GitHub Profile Username
 - `-t` or `--Threads`: Number of windows or threads to be used
