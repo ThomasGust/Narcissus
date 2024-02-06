@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     t= []
 
-    for i in range(threads):
+    for i in range(int(threads)):
         t.append(threading.Thread(target=start_thread))
         t[i].start()
 
