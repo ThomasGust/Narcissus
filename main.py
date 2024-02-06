@@ -28,10 +28,10 @@ if __name__ == "__main__":
 
     
     def start_thread():
-        os.system(f"python driver.py {username} {wt} {views} 0")
+        os.system(f"python driver.py {username} {wt} {int(views/threads)} 0")
 
     t= []
-    
+
     for i in range(threads):
         t.append(threading.Thread(target=start_thread))
         t[i].start()
